@@ -57,12 +57,3 @@ export async function deleteTask(req: Request, res: Response, next: NextFunction
     next(error);
   }
 }
-    const deleted = await taskService.deleteTask(id);
-    if (!deleted) {
-      return res.status(404).json({ error: 'Task not found' });
-    }
-    res.status(204).send();
-  } catch (error) {
-    next(error);
-  }
-}
